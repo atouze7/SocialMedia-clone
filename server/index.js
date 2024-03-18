@@ -29,7 +29,9 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+app.use(cors({
+  origin: 'https://social-media-clone-bay.vercel.app',
+}));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */
@@ -50,7 +52,7 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 //routes
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
-app.use("posts", postRoutes);
+app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;

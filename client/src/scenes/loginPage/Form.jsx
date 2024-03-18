@@ -67,6 +67,7 @@ const Form = () => {
       "https://social-media-clone-api-three.vercel.app/auth/register",
       {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: formData,
       }
     );

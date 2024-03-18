@@ -47,7 +47,14 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 //routes with files
-app.post("/auth/register", upload.single("picture"), register);
+//app.post("/auth/register", upload.single("picture"), register);
+app.post("/auth/register", upload.single("picture"), (req, res) => {
+  // Set the Access-Control-Allow-Origin header
+  res.setHeader('Access-Control-Allow-Origin', 'https://social-media-clone-bay.vercel.app');
+
+  // Other response handling...
+  res.send('Response from server');
+});
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 //routes

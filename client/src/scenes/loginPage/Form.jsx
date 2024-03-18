@@ -76,7 +76,6 @@ const Form = () => {
     if (savedUser) {
       setPageType("login");
     }
-    console.log(savedUser);
   };
 
   const login = async (values, onSubmitProps) => {

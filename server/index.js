@@ -48,7 +48,7 @@ const upload = multer({ storage });
 
 //routes with files
 //app.post("/auth/register", upload.single("picture"), register);
-app.post("/auth/register", upload.single("picture"), (req, res) => {
+app.post("/auth/register", upload.single("picture"), register,(req, res) => {
   // Set the Access-Control-Allow-Origin header
   res.setHeader('Access-Control-Allow-Origin', 'https://social-media-clone-bay.vercel.app');
 

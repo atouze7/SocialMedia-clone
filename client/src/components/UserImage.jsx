@@ -8,7 +8,7 @@ const UserImage = ({ image, size = "60px" }) => {
         width={size}
         height={size}
         alt="user"
-        src={`https://social-media-clone-api-three.vercel.app//assets/${image}`}
+        src={`https://social-media-clone-api-three.vercel.app/assets/${image}`}
       />
     </Box>
   );

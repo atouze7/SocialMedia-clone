@@ -1,10 +1,14 @@
 import { Box, useMediaQuery } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
-import Navbar from "scenes/navbar";
-import UserWidget from "scenes/widgets/UserWidget";
-import MyPostWidget from "scenes/widgets/MyPostWidget";
-import PostsWidget from "scenes/widgets/PostsWidget";
+//import Navbar from "scenes/navbar";
+import Navbar from "../navbar";
+//import UserWidget from "./scenes/widgets/UserWidget";
+import UserWidget from "../widgets/UserWidget";
+//import MyPostWidget from "./scenes/widgets/MyPostWidget";
+import MyPostWidget from "../widgets/MyPostWidget";
+//import PostsWidget from "./scenes/widgets/PostsWidget";
+import PostsWidget from "../widgets/PostsWidget";
 import AdvertWidget from "../widgets/AdvertWidget";
 
 const HomePage = () => {

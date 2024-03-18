@@ -67,7 +67,7 @@ const Form = () => {
       "https://social-media-clone-api-three.vercel.app/auth/register",
       {
         method: "POST",
-        body: formData,
+        body: JSON.stringify(formData),
       }
     );
     const savedUser = await savedUserResponse.json();

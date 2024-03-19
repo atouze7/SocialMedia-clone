@@ -64,13 +64,12 @@ const Form = () => {
     }
     console.log(values);
     formData.append("picturePath", values.picture.name);
-    console.log(formData);
 
     const savedUserResponse = await fetch(
       "https://social-media-clone-api-three.vercel.app/auth/register",
       {
         method: "POST",
-        body: formData,
+        body: JSON.stringify(values),
       }
     );
     const savedUser = await savedUserResponse.json();

@@ -101,7 +101,7 @@ const Form = () => {
         body: JSON.stringify(values), // Convert values object to JSON
       }
     );
-    console.log(values);
+    
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
 

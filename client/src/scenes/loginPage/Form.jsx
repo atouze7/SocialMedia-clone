@@ -55,7 +55,7 @@ const Form = () => {
   const isLogin = pageType === "login";
   const isRegister = pageType === "register";
 
-  const register = async (values, onSubmitProps) => {
+  /*const register = async (values, onSubmitProps) => {
     // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
@@ -78,7 +78,39 @@ const Form = () => {
     if (savedUser) {
       setPageType("login");
     }
-  };
+  };*/
+  const register = async (values, onSubmitProps) => {
+  // Create a new FormData object
+  const formData = new FormData();
+
+  // Append each field from the values object to the FormData object
+  for (let key in values) {
+    formData.append(key, values[key]);
+  }
+
+  // Append the picture file with a specific key (e.g., 'picture')
+  formData.append("picture", values.picture);
+  console.log(formData);
+
+  // Make the fetch request with the FormData object as the body
+  const savedUserResponse = await fetch(
+    "https://social-media-clone-api-three.vercel.app/auth/register",
+    {
+      method: "POST",
+      body: formData,
+    }
+  );
+
+  // Parse the response
+  const savedUser = await savedUserResponse.json();
+
+  // Reset the form if user is saved successfully
+  if (savedUser) {
+    onSubmitProps.resetForm();
+    setPageType("login");
+  }
+};
+
 
   const login = async (values, onSubmitProps) => {
     const loggedInResponse = await fetch("https://social-media-clone-api-three.vercel.app/auth/login", {

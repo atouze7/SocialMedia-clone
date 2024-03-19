@@ -90,7 +90,6 @@ const Form = () => {
 
   // Append the picture file with a specific key (e.g., 'picture')
   formData.append("picture", values.picture);
-  console.log(formData);
   console.log(values)
 
   // Make the fetch request with the FormData object as the body
@@ -110,6 +109,7 @@ const Form = () => {
     onSubmitProps.resetForm();
     setPageType("login");
   }
+    console.log(formData);
 };
 
 
